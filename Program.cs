@@ -2,7 +2,6 @@
 using SFML.System;
 using SFML.Window;
 using System;
-using static SFML.Window.Keyboard;
 
 namespace Demo
 {
@@ -49,7 +48,7 @@ namespace Demo
                 window.Clear(Color.Blue);
 
                 // If the D key is pressed...
-                if (IsKeyPressed(Key.D))
+                if (Keyboard.IsKeyPressed(Keyboard.Key.D))
                 {
                     // We want to move the rectangle 200 pixels per second to the right.
                     rectangle.Position = rectangle.Position + new Vector2f(200 * frameTime, 0);
