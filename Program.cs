@@ -8,7 +8,7 @@ namespace Demo
     public class Program
     {
         static void Main(string[] _)
-        {
+       {
             // Create a settings object for the window, this is where we can configure
             // our window before we create it.
             ContextSettings settings = new ContextSettings();
@@ -30,6 +30,11 @@ namespace Demo
             Vector2f rectangleSize = new Vector2f(200, 200);
             RectangleShape rectangle = new RectangleShape(rectangleSize);
             rectangle.Position = new Vector2f(100, 100);
+            rectangle.OutlineThickness = 2;
+            rectangle.OutlineColor = Color.Black;
+
+            Texture texture = new Texture("Resources/Image.png");
+            rectangle.Texture = texture;
 
             // Create a timer
             Clock timer = new Clock();
@@ -45,13 +50,34 @@ namespace Demo
 
                 // As we draw frames on top of the frame before, the first thing we need to do
                 // is to clear the whole screen a new blank colour.
-                window.Clear(Color.Blue);
+                //window.Clear(Color.Blue);
 
                 // If the D key is pressed...
                 if (Keyboard.IsKeyPressed(Keyboard.Key.D))
                 {
                     // We want to move the rectangle 200 pixels per second to the right.
                     rectangle.Position = rectangle.Position + new Vector2f(200 * frameTime, 0);
+                }
+
+                // If the s key is pressed...
+                if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+                {
+                    // We want to move the rectangle 200 pixels per second to the right.
+                    rectangle.Position = rectangle.Position - new Vector2f(200 * frameTime, 0);
+                }
+
+                // If the s key is pressed...
+                if (Keyboard.IsKeyPressed(Keyboard.Key.S))
+                {
+                    // We want to move the rectangle 200 pixels per second to the right.
+                    rectangle.Position = rectangle.Position + new Vector2f(0, 200 * frameTime);
+                }
+
+                // If the s key is pressed...
+                if (Keyboard.IsKeyPressed(Keyboard.Key.W))
+                {
+                    // We want to move the rectangle 200 pixels per second to the right.
+                    rectangle.Position = rectangle.Position - new Vector2f(0, 200 * frameTime);
                 }
 
                 // The screen has been cleared, whatever we want to draw, we can do so now, 

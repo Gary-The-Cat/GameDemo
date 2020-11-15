@@ -16,18 +16,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.OrTools" Version="7.8.7959" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Ninject" Version="3.3.4" />
-    <PackageReference Include="OpenCvSharp4" Version="4.4.0.20200725" />
-    <PackageReference Include="OpenCvSharp4.Windows" Version="4.4.0.20200725" />
     <PackageReference Include="SFML.NET" Version="2.5.0" />
-    <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
     <PackageReference Include="System.Security.Permissions" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
